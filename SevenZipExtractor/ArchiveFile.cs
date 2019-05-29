@@ -35,6 +35,11 @@ namespace SevenZipExtractor
             this.archiveStream = new InStreamWrapper(File.OpenRead(archiveFilePath));
         }
 
+        /// <summary>
+        /// It is recommended to use 'GuessFormatFromExtension' func by the file extension to identify the file format. 
+        /// </summary>
+        /// <param name="archiveStream"></param>
+        /// <param name="format">If the format is null, will read the stream header to identify the format. but it's not always right.</param>
         public ArchiveFile(Stream archiveStream, SevenZipFormat? format = null)
         {
             if (archiveStream == null)
